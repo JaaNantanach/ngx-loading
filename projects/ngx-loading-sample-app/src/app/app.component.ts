@@ -12,6 +12,7 @@ const SecondaryBlue = '#1976d2';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  
 })
 export class AppComponent {
   @ViewChild('ngxLoading', { static: false })

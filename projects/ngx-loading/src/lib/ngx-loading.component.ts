@@ -1016,6 +1016,7 @@ import { NgxLoadingService } from './ngx-loading.service';
       }
     `,
   ],
+  
 })
 export class NgxLoadingComponent implements OnInit {
   @Input() show = false;
