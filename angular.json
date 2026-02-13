@@ -65,12 +65,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ngx-loading-sample-app",
+            "outputPath": {
+              "base": "dist/ngx-loading-sample-app"
+            },
             "index": "projects/ngx-loading-sample-app/src/index.html",
-            "main": "projects/ngx-loading-sample-app/src/main.ts",
-            "polyfills": "projects/ngx-loading-sample-app/src/polyfills.ts",
+            "polyfills": [
+              "projects/ngx-loading-sample-app/src/polyfills.ts"
+            ],
             "tsConfig": "projects/ngx-loading-sample-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -80,7 +83,8 @@
             "styles": [
               "projects/ngx-loading-sample-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/ngx-loading-sample-app/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -106,9 +110,7 @@
             },
             "development": {
               "aot": true,
-              "buildOptimizer": true,
               "optimization": true,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
