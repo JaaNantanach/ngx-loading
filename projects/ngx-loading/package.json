@@ -1,10 +1,10 @@
 {
-  "name": "ngx-loading",
+  "name": "ngx-loading-fork",
   "version": "17.0.0",
   "description": "A customisable loading spinner for Angular applications.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zak-C/ngx-loading.git"
+    "url": "https://github.com/JaaNantanach/ngx-loading.git"
   },
   "keywords": [
     "Angular",
@@ -37,9 +37,9 @@
   "author": "Zak Cox",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Zak-C/ngx-loading/issues"
+    "url": "https://github.com/JaaNantanach/ngx-loading/issues"
   },
-  "homepage": "https://github.com/Zak-C/ngx-loading#readme",
+  "homepage": "https://github.com/JaaNantanach/ngx-loading#readme",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0"

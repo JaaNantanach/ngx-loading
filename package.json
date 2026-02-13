@@ -1,11 +1,12 @@
 {
-  "name": "ngx-loading",
+  "name": "ngx-loading-fork",
   "version": "17.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ngx-loading --configuration production",
     "watch": "ng build --watch --configuration development",
+    "build:prod": "ng build ngx-loading --configuration production",
     "test": "ng test --code-coverage",
     "lint": "ng lint",
     "prepare": "husky install"
