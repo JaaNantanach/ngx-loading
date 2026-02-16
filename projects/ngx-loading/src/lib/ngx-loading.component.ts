@@ -10,196 +10,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'ngx-loading',
-  template: `
-    <div *ngIf="show">
-      <div
-        class="backdrop"
-        [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        [ngStyle]="{
-          'border-radius': config.backdropBorderRadius,
-          'background-color': config.backdropBackgroundColour
-        }"
-      ></div>
-
-      <div [ngSwitch]="config.animationType">
-        <div
-          class="spinner-circle"
-          *ngSwitchCase="ngxLoadingAnimationTypes.circle"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-          [ngStyle]="{
-            'border-top-color': config.secondaryColour,
-            'border-right-color': config.secondaryColour,
-            'border-bottom-color': config.secondaryColour,
-            'border-left-color': config.primaryColour
-          }"
-        ></div>
-
-        <div
-          *ngSwitchCase="ngxLoadingAnimationTypes.cubeGrid"
-          class="sk-cube-grid"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        >
-          <div
-            class="sk-cube sk-cube1"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="sk-cube sk-cube2"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="sk-cube sk-cube3"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="sk-cube sk-cube4"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="sk-cube sk-cube5"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="sk-cube sk-cube6"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="sk-cube sk-cube7"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="sk-cube sk-cube8"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="sk-cube sk-cube9"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-        </div>
-
-        <div
-          class="spinner-sk-rotateplane"
-          *ngSwitchCase="ngxLoadingAnimationTypes.rotatingPlane"
-          [ngStyle]="{ 'background-color': config.primaryColour }"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        ></div>
-
-        <div
-          class="spinner-rectangle-bounce"
-          *ngSwitchCase="ngxLoadingAnimationTypes.rectangleBounce"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        >
-          <div
-            class="rect1"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="rect2"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="rect3"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="rect4"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="rect5"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-        </div>
-
-        <div
-          class="spinner-wandering-cubes"
-          *ngSwitchCase="ngxLoadingAnimationTypes.wanderingCubes"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        >
-          <div
-            class="cube1"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="cube2"
-            [ngStyle]="{ 'background-color': config.secondaryColour }"
-          ></div>
-        </div>
-
-        <div
-          class="spinner-double-bounce"
-          *ngSwitchCase="ngxLoadingAnimationTypes.doubleBounce"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        >
-          <div
-            class="double-bounce1"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="double-bounce2"
-            [ngStyle]="{ 'background-color': config.secondaryColour }"
-          ></div>
-        </div>
-
-        <div
-          class="spinner-pulse"
-          *ngSwitchCase="ngxLoadingAnimationTypes.pulse"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-          [ngStyle]="{ 'background-color': config.primaryColour }"
-        ></div>
-
-        <div
-          class="spinner-chasing-dots"
-          *ngSwitchCase="ngxLoadingAnimationTypes.chasingDots"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        >
-          <div
-            class="dot1"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="dot2"
-            [ngStyle]="{ 'background-color': config.secondaryColour }"
-          ></div>
-        </div>
-
-        <div
-          class="spinner-circle-swish"
-          *ngSwitchCase="ngxLoadingAnimationTypes.circleSwish"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-          [ngStyle]="{ color: config.primaryColour }"
-        ></div>
-
-        <div
-          *ngSwitchCase="ngxLoadingAnimationTypes.none"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        ></div>
-
-        <div
-          *ngSwitchDefault
-          class="spinner-three-bounce"
-          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
-        >
-          <div
-            class="bounce1"
-            [ngStyle]="{ 'background-color': config.primaryColour }"
-          ></div>
-          <div
-            class="bounce2"
-            [ngStyle]="{ 'background-color': config.secondaryColour }"
-          ></div>
-          <div
-            class="bounce3"
-            [ngStyle]="{ 'background-color': config.tertiaryColour }"
-          ></div>
-        </div>
-
-        <ng-container *ngIf="template">
-          <ng-container *ngTemplateOutlet="template"></ng-container>
-        </ng-container>
-      </div>
-    </div>
-  `,
+  templateUrl: './ngx-loading.component.html',
   styles: [
     `
       .backdrop {
@@ -285,70 +96,112 @@ import { CommonModule } from '@angular/common';
       }
       @-webkit-keyframes load6 {
         0% {
-          box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em,
-            0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            0 -0.83em 0 -0.42em,
+            0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em,
+            0 -0.83em 0 -0.477em;
 
           -webkit-transform: rotate(0deg);
         }
         5%,
         95% {
-          box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em,
-            0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            0 -0.83em 0 -0.42em,
+            0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em,
+            0 -0.83em 0 -0.477em;
         }
         10%,
         59% {
-          box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em,
-            -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            -0.087em -0.825em 0 -0.42em,
+            -0.173em -0.812em 0 -0.44em,
+            -0.256em -0.789em 0 -0.46em,
             -0.297em -0.775em 0 -0.477em;
         }
         20% {
-          box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
-            -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            -0.338em -0.758em 0 -0.42em,
+            -0.555em -0.617em 0 -0.44em,
+            -0.671em -0.488em 0 -0.46em,
             -0.749em -0.34em 0 -0.477em;
         }
         38% {
-          box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
-            -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            -0.377em -0.74em 0 -0.42em,
+            -0.645em -0.522em 0 -0.44em,
+            -0.775em -0.297em 0 -0.46em,
             -0.82em -0.09em 0 -0.477em;
         }
         100% {
-          box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em,
-            0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            0 -0.83em 0 -0.42em,
+            0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em,
+            0 -0.83em 0 -0.477em;
 
           -webkit-transform: rotate(360deg);
         }
       }
       @keyframes load6 {
         0% {
-          box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em,
-            0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            0 -0.83em 0 -0.42em,
+            0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em,
+            0 -0.83em 0 -0.477em;
 
           transform: rotate(0deg);
         }
         5%,
         95% {
-          box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em,
-            0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            0 -0.83em 0 -0.42em,
+            0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em,
+            0 -0.83em 0 -0.477em;
         }
         10%,
         59% {
-          box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em,
-            -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            -0.087em -0.825em 0 -0.42em,
+            -0.173em -0.812em 0 -0.44em,
+            -0.256em -0.789em 0 -0.46em,
             -0.297em -0.775em 0 -0.477em;
         }
         20% {
-          box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
-            -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            -0.338em -0.758em 0 -0.42em,
+            -0.555em -0.617em 0 -0.44em,
+            -0.671em -0.488em 0 -0.46em,
             -0.749em -0.34em 0 -0.477em;
         }
         38% {
-          box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
-            -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            -0.377em -0.74em 0 -0.42em,
+            -0.645em -0.522em 0 -0.44em,
+            -0.775em -0.297em 0 -0.46em,
             -0.82em -0.09em 0 -0.477em;
         }
         100% {
-          box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em,
-            0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+          box-shadow:
+            0 -0.83em 0 -0.4em,
+            0 -0.83em 0 -0.42em,
+            0 -0.83em 0 -0.44em,
+            0 -0.83em 0 -0.46em,
+            0 -0.83em 0 -0.477em;
 
           transform: rotate(360deg);
         }

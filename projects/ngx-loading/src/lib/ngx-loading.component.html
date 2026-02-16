@@ -1,0 +1,95 @@
+@if (show) {
+<div class="backdrop" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }" [ngStyle]="{
+                'border-radius': config.backdropBorderRadius,
+                'background-color': config.backdropBackgroundColour
+                }"></div>
+
+@switch (config.animationType) {
+@case (ngxLoadingAnimationTypes.circle) {
+<div class="spinner-circle" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }" [ngStyle]="{
+                    'border-top-color': config.secondaryColour,
+                    'border-right-color': config.secondaryColour,
+                    'border-bottom-color': config.secondaryColour,
+                    'border-left-color': config.primaryColour
+                }"></div>
+}
+
+@case (ngxLoadingAnimationTypes.cubeGrid) {
+<div class="sk-cube-grid" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }">
+    <div class="sk-cube sk-cube1" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="sk-cube sk-cube2" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="sk-cube sk-cube3" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="sk-cube sk-cube4" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="sk-cube sk-cube5" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="sk-cube sk-cube6" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="sk-cube sk-cube7" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="sk-cube sk-cube8" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="sk-cube sk-cube9" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+</div>
+}
+
+@case (ngxLoadingAnimationTypes.rotatingPlane) {
+<div class="spinner-sk-rotateplane" [ngStyle]="{ 'background-color': config.primaryColour }"
+    [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"></div>
+}
+
+@case (ngxLoadingAnimationTypes.rectangleBounce) {
+<div class="spinner-rectangle-bounce" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }">
+    <div class="rect1" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="rect2" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="rect3" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="rect4" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="rect5" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+</div>
+}
+
+@case (ngxLoadingAnimationTypes.wanderingCubes) {
+<div class="spinner-wandering-cubes" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }">
+    <div class="cube1" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="cube2" [ngStyle]="{ 'background-color': config.secondaryColour }"></div>
+</div>
+}
+
+@case (ngxLoadingAnimationTypes.doubleBounce) {
+<div class="spinner-double-bounce" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }">
+    <div class="double-bounce1" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="double-bounce2" [ngStyle]="{ 'background-color': config.secondaryColour }"></div>
+</div>
+}
+
+@case (ngxLoadingAnimationTypes.pulse) {
+<div class="spinner-pulse" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
+    [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+}
+
+@case (ngxLoadingAnimationTypes.chasingDots) {
+<div class="spinner-chasing-dots" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }">
+    <div class="dot1" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="dot2" [ngStyle]="{ 'background-color': config.secondaryColour }"></div>
+</div>
+}
+
+@case (ngxLoadingAnimationTypes.circleSwish) {
+<div class="spinner-circle-swish" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
+    [ngStyle]="{ color: config.primaryColour }"></div>
+}
+
+@case (ngxLoadingAnimationTypes.none) {
+<div [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"></div>
+}
+
+@default {
+<div class="spinner-three-bounce" [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }">
+    <div class="bounce1" [ngStyle]="{ 'background-color': config.primaryColour }"></div>
+    <div class="bounce2" [ngStyle]="{ 'background-color': config.secondaryColour }"></div>
+    <div class="bounce3" [ngStyle]="{ 'background-color': config.tertiaryColour }"></div>
+</div>
+}
+}
+
+@if (template) {
+<ng-container>
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+</ng-container>
+}
+}
