@@ -1,3 +1,8 @@
+# ngx-loading-fork
+This is a fork of [ngx-loading](https://github.com/Zak-C/ngx-loading)
+[![npm version](https://badge.fury.io/js/ngx-loading-fork.svg)](https://badge.fury.io/js/ngx-loading-fork)
+
+
 # ngx-loading
 
 A customisable loading spinner for Angular applications.
