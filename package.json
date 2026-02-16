@@ -1,6 +1,6 @@
 {
   "name": "ngx-loading-fork",
-  "version": "20.0.0",
+  "version": "20.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -1,6 +1,6 @@
 {
   "name": "ngx-loading-fork",
-  "version": "20.0.0",
+  "version": "20.0.2",
   "description": "A customisable loading spinner for Angular applications.",
   "repository": {
     "type": "git",
@@ -41,8 +41,8 @@
   },
   "homepage": "https://github.com/JaaNantanach/ngx-loading#readme",
   "peerDependencies": {
-    "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0"
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
