@@ -1,7 +1,7 @@
 import type { TemplateRef } from '@angular/core';
 import { Component, ViewChild } from '@angular/core';
 import { ngxLoadingAnimationTypes } from '../../../../projects/ngx-loading/src/lib/ngx-loading-config';
-import type { NgxLoadingComponent } from '../../../../projects/ngx-loading/src/lib/ngx-loading.component';
+import { NgxLoadingComponent } from '../../../../projects/ngx-loading/src/lib/ngx-loading.component';
 
 const PrimaryWhite = '#ffffff';
 const SecondaryGrey = '#ccc';
@@ -12,7 +12,7 @@ const SecondaryBlue = '#1976d2';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  
+  imports: [NgxLoadingComponent],
 })
 export class AppComponent {
   @ViewChild('ngxLoading', { static: false })

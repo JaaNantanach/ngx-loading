@@ -22,7 +22,7 @@ describe('NgxLoadingComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      declarations: [NgxLoadingComponent],
+      imports: [NgxLoadingComponent],
       providers: [
         { provide: NgxLoadingService, useValue: ngxLoadingServiceStub },
       ],

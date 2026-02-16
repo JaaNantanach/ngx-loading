@@ -6,6 +6,7 @@ import {
 } from './ngx-loading-config';
 import { INgxLoadingConfig } from './ngx-loading-config';
 import { NgxLoadingService } from './ngx-loading.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'ngx-loading',
@@ -1016,7 +1017,7 @@ import { NgxLoadingService } from './ngx-loading.service';
       }
     `,
   ],
-  
+  imports: [CommonModule],
 })
 export class NgxLoadingComponent implements OnInit {
   @Input() show = false;
